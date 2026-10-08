@@ -276,6 +276,16 @@ header.hero { padding: 56px 0 52px; }
 .hbc { background: var(--surface); border: 1px solid var(--line2); border-radius: 99px; padding: 3px 10px; font-size: 12px; color: var(--ink2); }
 .hbo { font-size: 12.5px; margin-left: 4px; }
 .dsrc { font-size: 12px !important; color: var(--muted); margin-top: 4px !important; }
+
+.mk { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin-top: 12px; }
+.mkl { font-size: 12.5px; color: var(--muted); margin-right: 4px; }
+.mkc { background: var(--yellow); color: #171719; border-radius: 99px; padding: 3px 11px; font-size: 12.5px; font-weight: 600; }
+
+.dchips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.dchip { font: inherit; font-size: 12.5px; background: var(--surface); color: var(--ink); border: 1px solid var(--line2); border-radius: 99px; padding: 4px 12px; cursor: pointer; }
+.dchip:hover { border-color: var(--accent); }
+.dform { display: flex; gap: 8px; margin-top: 8px; }
+.dform input { flex: 1; min-width: 0; font: inherit; font-size: 13.5px; padding: 7px 10px; border: 1px solid var(--line2); border-radius: 10px; background: var(--surface); color: var(--ink); }
 </style><style>[hidden]{display:none !important}</style></head><body>
 
 <nav class="topnav" aria-label="Page sections"><div class="in"><div class="br"><span class="badge" id="nbadge">TRE</span><span class="nm">Tremendous</span></div><div class="tabs" id="tabs"></div></div></nav>
@@ -285,6 +295,7 @@ header.hero { padding: 56px 0 52px; }
   <h1 id="h1"></h1>
   <p id="lede"></p>
   <div class="map" id="reqs" aria-label="What this team supports"></div>
+  <div class="mk" aria-label="Where Tremendous operates"><span class="mkl">Where Tremendous operates</span><span class="mkc">United States</span><span class="mkc">Canada</span><span class="mkc">Brazil</span><span class="mkc">Spain</span><span class="mkc">Portugal</span><span class="mkc">United Kingdom</span></div>
   <span class="pill">Personal build, not deployed</span><div style="margin-top:18px"><button type="button" class="dbtn pri" data-go="team">Meet the AI agents</button> <button type="button" class="dbtn" data-go="try">Try the demo</button></div>
   <figure class="hubfig"><svg class="hub" viewBox="0 0 600 156" role="img" aria-label="Ten AI agents around one person on the People Ops team"><line x1="300" y1="78" x2="300.0" y2="26.0" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="446.9" y2="35.9" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="537.8" y2="61.9" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="537.8" y2="94.1" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="446.9" y2="120.1" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="300.0" y2="130.0" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="153.1" y2="120.1" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="62.2" y2="94.1" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="62.2" y2="61.9" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="153.1" y2="35.9" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><circle cx="300.0" cy="26.0" r="13" fill="#0b8a6a" stroke="var(--surface)" stroke-width="3"/><circle cx="446.9" cy="35.9" r="13" fill="#ff3267" stroke="var(--surface)" stroke-width="3"/><circle cx="537.8" cy="61.9" r="13" fill="#0a4fb3" stroke="var(--surface)" stroke-width="3"/><circle cx="537.8" cy="94.1" r="13" fill="#171719" stroke="var(--surface)" stroke-width="3"/><circle cx="446.9" cy="120.1" r="13" fill="#e8890c" stroke="var(--surface)" stroke-width="3"/><circle cx="300.0" cy="130.0" r="13" fill="#0064e4" stroke="var(--surface)" stroke-width="3"/><circle cx="153.1" cy="120.1" r="13" fill="#0f8b8d" stroke="var(--surface)" stroke-width="3"/><circle cx="62.2" cy="94.1" r="13" fill="#b3123f" stroke="var(--surface)" stroke-width="3"/><circle cx="62.2" cy="61.9" r="13" fill="#ff6a3d" stroke="var(--surface)" stroke-width="3"/><circle cx="153.1" cy="35.9" r="13" fill="#5b6b7e" stroke="var(--surface)" stroke-width="3"/><circle cx="300" cy="78" r="30" fill="var(--yellow)" stroke="var(--ink)" stroke-width="2.4"/><circle cx="300" cy="70" r="7" fill="none" stroke="#171719" stroke-width="2.4"/><path d="M286 94c0-8 6-12 14-12s14 4 14 12" fill="none" stroke="#171719" stroke-width="2.4" stroke-linecap="round"/></svg><figcaption>Ten agents, one person in the middle of every one.</figcaption></figure>
 </div></header>
@@ -408,7 +419,7 @@ header.hero { padding: 56px 0 52px; }
             <button class="dbtn pri" id="dapprove" type="button">Approve and create</button><button class="dbtn" id="dedit" type="button">Ask for changes</button></div></div>
           <div class="dmsg" id="dok" hidden><span class="dav pl">PO</span><div class="tx"><b>People Ops lead</b><small>9:05 AM</small><p>Approved. Create the checklist and the record draft.</p></div></div>
           <div class="dmsg" id="dok2" hidden><span class="dav ag">OA</span><div class="tx"><b>Onboarding agent</b><small>9:05 AM</small><p>Done. The checklist is in Notion, a data check is waiting in the HRIS, and the Day 1 invites are drafted in Calendar.</p></div></div>
-          <div class="dmsg" id="dchg" hidden><span class="dav ag">OA</span><div class="tx"><b>Onboarding agent</b><small>9:04 AM</small><p>Got it. Tell me what to change and I will update the draft. Nothing has been created yet.</p></div></div>
+          <div class="dmsg" id="dchg" hidden><span class="dav ag">OA</span><div class="tx"><b>Onboarding agent</b><small>9:04 AM</small><p>Sure. What should I change? Pick one or type your own. Nothing has been created yet.</p><div class="dchips"><button type="button" class="dchip">Add a buddy intro</button><button type="button" class="dchip">Shorten the 90-day plan</button><button type="button" class="dchip">Add a handbook reading list</button></div><form class="dform" id="dform"><input id="dtxt" type="text" maxlength="120" placeholder="Type a change" aria-label="Type a change"><button class="dbtn pri" type="submit">Send</button></form></div></div>
         </div>
       </div>
 
@@ -560,7 +571,7 @@ header.hero { padding: 56px 0 52px; }
     role: 'People Operations Manager',
     accent: '#0064e4',      // brand accent color
     navy: '#171719',        // brand dark color (hero band)
-    requirements: ['HRIS and benefits (US, Canada, international)', 'Onboarding, offboarding and severance', 'Reporting, investigations and escalation', 'Biannual performance, comp and engagement cycle', 'Immigration: O-1, L-1A, H-1B, PERM, I-9', 'Policies and handbook, documented in writing'],
+    requirements: ['HRIS and benefits (US, Canada, Brazil, Europe)', 'Onboarding, offboarding and severance', 'Reporting, investigations and escalation', 'Biannual performance, comp and engagement cycle', 'Immigration: O-1, L-1A, H-1B, PERM, I-9', 'Policies and handbook, documented in writing'],
     lede: 'A personal build: ten AI agents, one for each part of the employee lifecycle, with a person approving everything that matters. Each agent below is tailored to what this role asks for, and runs inside the tools a documentation-first remote team already uses.',
     spec: {
       "Onboarding": {
@@ -585,12 +596,12 @@ header.hero { padding: 56px 0 52px; }
       },
       "Benefits": {
             "tags": [
-                  "US, Canada and international plans",
+                  "US, Canada, Brazil, Spain, Portugal and UK plans",
                   "Open enrollment calendar",
                   "HSA, FSA, COBRA, 401(k)",
                   "Required annual notices"
             ],
-            "why": "The role administers benefits across the US, Canada and other countries. The agent holds the calendar, the notice list and the carrier escalation checklist, and never sees individual claims.",
+            "why": "The role administers benefits across the US, Canada, Brazil, Spain, Portugal and the UK. The agent holds the calendar, the notice list and the carrier escalation checklist, and never sees individual claims.",
             "say": "At Ridecell I changed carriers to Cigna after a re-rating and saved $30K a year. The agent makes sure no enrollment date or notice is missed."
       },
       "Payroll": {
@@ -630,7 +641,7 @@ header.hero { padding: 56px 0 52px; }
                   "Notice templates",
                   "Medical details kept with HR"
             ],
-            "why": "Deep US leave experience is on the list, and a team spread across several countries needs local rules. The agent drafts notices and keeps medical details out of chat.",
+            "why": "Deep US leave experience is on the list, and a team spread across the US, Canada, Brazil, Spain, Portugal and the UK needs local rules. The agent drafts notices and keeps medical details out of chat.",
             "say": "Leave requests go through a form, not a chat thread, so sensitive details stay in the system of record. The agent only sees dates and status."
       },
       "Compliance": {
@@ -772,7 +783,7 @@ header.hero { padding: 56px 0 52px; }
     baseDraw();
     var A = AG[sel], S = CONFIG.spec[A.n];
     var HB = {"Onboarding": ["Values", "Remote work", "Writing", "Meetings and messaging"], "Offboarding": ["Company responsibility", "Equity", "Information sharing"], "Benefits": ["Benefits", "Equity", "Time off"], "Payroll": ["Compensation", "Equity", "Time off"], "Engagement": ["Performance", "Values", "Work-life focus", "Offsites"], "Immigration": ["Remote work", "Compensation"], "Leave": ["Time off", "Benefits"], "Compliance": ["Company responsibility", "Remote work", "Information sharing", "Work quality"], "AskPeople": ["All handbook sections"], "Insights": ["Team", "Compensation", "Performance"]}[A.n] || [];
-    var SK = {"Onboarding": [{"n": "preboarding-checklist", "d": "Offer accepted to day one, with tasks split by country and role."}, {"n": "i9-timing-reminders", "d": "Flags the Section 1 and 2 deadlines. Never touches documents."}, {"n": "access-and-equipment-requests", "d": "Drafts the IT and equipment asks for each new hire."}, {"n": "first-week-and-90-day-plan", "d": "Builds the week-one schedule and 30/60/90 goals from a template."}], "Offboarding": [{"n": "exit-checklist", "d": "Last-day tasks for the employee, manager, IT, and payroll."}, {"n": "severance-letter-draft", "d": "Fills approved templates from counts and terms. Counsel reviews."}, {"n": "final-pay-and-cobra-timeline", "d": "Deadlines by state, province, or country for final pay and benefits."}, {"n": "access-removal-handoff", "d": "Sequences account shutoff and work handoff."}], "Benefits": [{"n": "open-enrollment-comms", "d": "Drafts announcements, reminders, and FAQs for each region."}, {"n": "plan-comparison-summary", "d": "Puts US, Canada, and international plans side by side."}, {"n": "benefits-faq-answers", "d": "Answers eligibility and coverage questions from plan documents."}, {"n": "renewal-calendar", "d": "Tracks carrier renewals and the decisions due before them."}], "Payroll": [{"n": "payroll-cutoff-calendar", "d": "Reminds the team of cutoffs by country and pay group."}, {"n": "change-audit-checklist", "d": "Reconciles changes by count before each run. No pay data in prompts."}, {"n": "off-cycle-comp-brief", "d": "Packages a promotion or comp change for approval, using bands."}, {"n": "new-hire-payroll-setup", "d": "Country-by-country setup steps for employees, EOR, and contractors."}], "Engagement": [{"n": "biannual-cycle-planner", "d": "Plans timelines, reminders, and manager guidance for each cycle."}, {"n": "calibration-prep", "d": "Structures rating discussions and promotion cases."}, {"n": "pulse-survey-themes", "d": "Groups open-text answers into themes with counts."}, {"n": "feedback-prompts", "d": "Turns vague feedback into specific, behavior-based notes."}], "Immigration": [{"n": "visa-timeline-tracker", "d": "Milestones for O-1, L-1A, H-1B, and PERM, with next dates."}, {"n": "case-document-checklist", "d": "Lists what counsel needs. Documents stay with counsel and the HRIS."}, {"n": "i9-and-reverification-audit", "d": "Finds upcoming expirations and missing steps from status fields."}, {"n": "counsel-intake-brief", "d": "Summarizes the business case for the attorney, no identity data."}], "Leave": [{"n": "leave-eligibility-guide", "d": "Explains leave types by state, province, and country."}, {"n": "leave-timeline-calendar", "d": "Maps notice, certification, and return dates."}, {"n": "return-to-work-checklist", "d": "Steps for the manager and People Ops on return."}, {"n": "manager-leave-faq", "d": "Plain answers for managers, with escalation for edge cases."}], "Compliance": [{"n": "handbook-drafter", "d": "Drafts and rewrites policies in plain language, documented in writing."}, {"n": "policy-change-tracker", "d": "Watches for rule changes by jurisdiction and lists what to update."}, {"n": "audit-evidence-index", "d": "Keeps a map of where each control and record lives."}, {"n": "investigation-intake-template", "d": "Structures the intake notes. A person leads every investigation."}], "AskPeople": [{"n": "policy-lookup", "d": "Answers from the handbook and cites the section."}, {"n": "routing-rules", "d": "Decides what goes to a person, and who."}, {"n": "faq-gap-finder", "d": "Spots repeated questions that need a written answer."}, {"n": "sensitive-topic-escalation", "d": "Detects topics that must move to a human right away."}], "Insights": [{"n": "headcount-snapshot", "d": "Headcount by team, location, and type from HRIS exports."}, {"n": "attrition-trends", "d": "Turnover by team and tenure, with plain-language notes."}, {"n": "hris-data-hygiene-check", "d": "Finds missing or inconsistent fields before reports go out."}, {"n": "leadership-people-report", "d": "Turns the numbers into a one-page summary for leaders."}]}[A.n];
+    var SK = {"Onboarding": [{"n": "preboarding-checklist", "d": "Offer accepted to day one, with tasks split by country and role."}, {"n": "i9-timing-reminders", "d": "Flags the Section 1 and 2 deadlines. Never touches documents."}, {"n": "access-and-equipment-requests", "d": "Drafts the IT and equipment asks for each new hire."}, {"n": "first-week-and-90-day-plan", "d": "Builds the week-one schedule and 30/60/90 goals from a template."}], "Offboarding": [{"n": "exit-checklist", "d": "Last-day tasks for the employee, manager, IT, and payroll."}, {"n": "severance-letter-draft", "d": "Fills approved templates from counts and terms. Counsel reviews."}, {"n": "final-pay-and-cobra-timeline", "d": "Deadlines by state, province, or country for final pay and benefits."}, {"n": "access-removal-handoff", "d": "Sequences account shutoff and work handoff."}], "Benefits": [{"n": "open-enrollment-comms", "d": "Drafts announcements, reminders, and FAQs for each region."}, {"n": "plan-comparison-summary", "d": "Puts US, Canada, Brazil, Spain, Portugal, and UK plans side by side."}, {"n": "benefits-faq-answers", "d": "Answers eligibility and coverage questions from plan documents."}, {"n": "renewal-calendar", "d": "Tracks carrier renewals and the decisions due before them."}], "Payroll": [{"n": "payroll-cutoff-calendar", "d": "Reminds the team of cutoffs by country and pay group."}, {"n": "change-audit-checklist", "d": "Reconciles changes by count before each run. No pay data in prompts."}, {"n": "off-cycle-comp-brief", "d": "Packages a promotion or comp change for approval, using bands."}, {"n": "new-hire-payroll-setup", "d": "Country-by-country setup steps for employees, EOR, and contractors."}], "Engagement": [{"n": "biannual-cycle-planner", "d": "Plans timelines, reminders, and manager guidance for each cycle."}, {"n": "calibration-prep", "d": "Structures rating discussions and promotion cases."}, {"n": "pulse-survey-themes", "d": "Groups open-text answers into themes with counts."}, {"n": "feedback-prompts", "d": "Turns vague feedback into specific, behavior-based notes."}], "Immigration": [{"n": "visa-timeline-tracker", "d": "Milestones for O-1, L-1A, H-1B, and PERM, with next dates."}, {"n": "case-document-checklist", "d": "Lists what counsel needs. Documents stay with counsel and the HRIS."}, {"n": "i9-and-reverification-audit", "d": "Finds upcoming expirations and missing steps from status fields."}, {"n": "counsel-intake-brief", "d": "Summarizes the business case for the attorney, no identity data."}], "Leave": [{"n": "leave-eligibility-guide", "d": "Explains leave types by state, province, and country."}, {"n": "leave-timeline-calendar", "d": "Maps notice, certification, and return dates."}, {"n": "return-to-work-checklist", "d": "Steps for the manager and People Ops on return."}, {"n": "manager-leave-faq", "d": "Plain answers for managers, with escalation for edge cases."}], "Compliance": [{"n": "handbook-drafter", "d": "Drafts and rewrites policies in plain language, documented in writing."}, {"n": "policy-change-tracker", "d": "Watches for rule changes by jurisdiction, including GDPR, UK GDPR, and LGPD, and lists what to update."}, {"n": "audit-evidence-index", "d": "Keeps a map of where each control and record lives."}, {"n": "investigation-intake-template", "d": "Structures the intake notes. A person leads every investigation."}], "AskPeople": [{"n": "policy-lookup", "d": "Answers from the handbook and cites the section."}, {"n": "routing-rules", "d": "Decides what goes to a person, and who."}, {"n": "faq-gap-finder", "d": "Spots repeated questions that need a written answer."}, {"n": "sensitive-topic-escalation", "d": "Detects topics that must move to a human right away."}], "Insights": [{"n": "headcount-snapshot", "d": "Headcount by team, location, and type from HRIS exports."}, {"n": "attrition-trends", "d": "Turnover by team and tenure, with plain-language notes."}, {"n": "hris-data-hygiene-check", "d": "Finds missing or inconsistent fields before reports go out."}, {"n": "leadership-people-report", "d": "Turns the numbers into a one-page summary for leaders."}]}[A.n];
     var hm = $('ag-detail').querySelector('.human');
     if (SK && hm) {
       hm.insertAdjacentHTML('beforebegin', '<div class="skills" style="--ac:' + A.c + '"><h4>Skills installed <span>' + SK.length + '</span></h4><p class="skn">Folders of instructions this agent loads when a request matches. This is what it specializes in.</p><div class="skg">' + SK.map(function (s) { return '<div class="skc"><code>' + esc(s.n) + '</code><span>' + esc(s.d) + '</span></div>'; }).join('') + '</div><div class="hbk"><span class="hbl">Reads from the Tremendous handbook</span>' + HB.map(function (t) { return '<span class="hbc">' + esc(t) + '</span>'; }).join('') + '<a class="hbo" href="https://handbook.tremendous.com/" target="_blank" rel="noopener noreferrer">Open handbook</a></div></div>');
@@ -812,11 +823,36 @@ header.hero { padding: 56px 0 52px; }
   document.getElementById('dprev').addEventListener('click', function () { show(cur - 1); });
   document.getElementById('dnext').addEventListener('click', function () { show(cur + 1); });
   document.getElementById('dapprove').addEventListener('click', function () {
-    ok = true; document.getElementById('dok').hidden = false; document.getElementById('dok2').hidden = false; document.getElementById('dchg').hidden = true;
+    ok = true; document.getElementById('dok').hidden = false; document.getElementById('dok2').hidden = false; document.getElementById('dchg').hidden = true; document.getElementById('dtxt').disabled = true;
     this.disabled = true; document.getElementById('dedit').disabled = true;
     document.getElementById('nstat').textContent = 'Approved and created';
   });
-  document.getElementById('dedit').addEventListener('click', function () { document.getElementById('dchg').hidden = false; });
+  (function () { var c = document.getElementById('dchg'), o = document.getElementById('dok'); o.parentNode.insertBefore(c, o); })();
+  function dview(el) { try { el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) { el.scrollIntoView(); } }
+  document.getElementById('dedit').addEventListener('click', function () {
+    var c = document.getElementById('dchg'); c.hidden = false; dview(c);
+    setTimeout(function () { try { document.getElementById('dtxt').focus({ preventScroll: true }); } catch (e) {} }, 50);
+  });
+  function dsend(text) {
+    text = (text || '').trim(); if (!text || ok) return;
+    var anchor = document.getElementById('dchg');
+    function msg(cls, init, who, body) {
+      var d = document.createElement('div'); d.className = 'dmsg';
+      var a = document.createElement('span'); a.className = 'dav ' + cls; a.textContent = init;
+      var t = document.createElement('div'); t.className = 'tx';
+      var b = document.createElement('b'); b.textContent = who;
+      var s = document.createElement('small'); s.textContent = '9:04 AM';
+      var pp = document.createElement('p'); pp.textContent = body;
+      t.appendChild(b); t.appendChild(s); t.appendChild(pp); d.appendChild(a); d.appendChild(t);
+      anchor.parentNode.insertBefore(d, anchor); return d;
+    }
+    msg('pl', 'PO', 'People Ops lead', text);
+    var r = msg('ag', 'OA', 'Onboarding agent', 'Updated the draft: ' + text.charAt(0).toLowerCase() + text.slice(1).replace(/[.]+$/, '') + '. Nothing has been created yet. Approve when you are ready.');
+    document.getElementById('dtxt').value = '';
+    dview(r);
+  }
+  document.getElementById('dform').addEventListener('submit', function (e) { e.preventDefault(); dsend(document.getElementById('dtxt').value); });
+  Array.prototype.forEach.call(document.querySelectorAll('#dchg .dchip'), function (b) { b.addEventListener('click', function () { dsend(b.textContent); }); });
   var chks = Array.prototype.slice.call(document.querySelectorAll('#dp1 .dchk'));
   chks.forEach(function (b) { b.addEventListener('click', function () {
     b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
