@@ -101,8 +101,6 @@ header.hero .map { justify-content: center; } header.hero .map span { background
 .agtop .rb { font-size: 12.5px; color: var(--muted); }
 .human { margin-top: 14px; border: 2px dashed var(--line2); border-radius: 14px; padding: 10px 14px; font-size: 13.5px; color: var(--ink2); }
 .human b { color: var(--ink); }
-.icard svg { display: none; }
-.icard { gap: 0; }
 .brd { display: grid; gap: 18px; }
 .brd-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; position: relative; }
 .brd-step { position: relative; text-align: center; background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 14px 8px 12px; cursor: pointer; font: inherit; color: var(--ink); display: grid; gap: 4px; justify-items: center; transition: transform .2s, border-color .2s, background .2s; }
@@ -212,20 +210,70 @@ header.hero .map { justify-content: center; } header.hero .map span { background
 .itool .tile.logo.fill img { object-fit: cover; }
 .itool .tile.logo.wide { width: 104px; padding: 0 6px; }
 .itool .tile.logo.wide img { object-fit: contain; }
+
+.topnav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+.topnav .in { max-width: 1100px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; gap: 14px; min-width: 0; }
+.topnav .br { display: flex; align-items: center; gap: 9px; flex: none; font: 800 15px var(--f-display); color: var(--accent); letter-spacing: .01em; }
+.topnav .br .badge { width: 30px; height: 30px; border-radius: 8px; font-size: 11px; }
+.topnav .tabs { display: flex; gap: 2px; overflow-x: auto; min-width: 0; flex: 1; justify-content: flex-end; scrollbar-width: none; }
+.topnav .tabs::-webkit-scrollbar { display: none; }
+.topnav .tab { font: 600 14px var(--f-body); color: var(--ink2); background: transparent; border: 0; border-radius: 8px; padding: 8px 12px; cursor: pointer; white-space: nowrap; }
+.topnav .tab:hover { background: var(--panel); color: var(--ink); }
+.topnav .tab[aria-current="page"] { color: var(--accent); background: var(--accent-wash); }
+.topnav .tab:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+@media (max-width: 640px) { .topnav .br span.nm { display: none; } .topnav .tabs { justify-content: flex-start; } }
+main { padding-block: 20px 28px; }
+header.hero { padding: 56px 0 52px; }
+.tpick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tpb { display: flex; align-items: center; gap: 8px; font: 600 13px var(--f-body); color: var(--ink2); background: var(--surface); border: 1px solid var(--line2); border-radius: 12px; padding: 6px 12px 6px 6px; cursor: pointer; }
+.tpb img { height: 26px; width: auto; max-width: 64px; border-radius: 6px; display: block; }
+.tpb[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-wash); color: var(--ink); box-shadow: 0 0 0 1px var(--accent) inset; }
+.tpb:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+#inth ~ .itools { grid-template-columns: minmax(0, 1fr); }
+.itools .itool { max-width: 820px; }
+#trysec .demo { margin-top: 14px; }
+.agtitle { display: none; }
+#teamh + .sub { color: var(--ink); font-size: 15px; margin-top: 6px; }
+#teamh + .sub b { color: var(--accent); }
+.agfolder { margin-top: 24px; padding-top: 22px; padding-bottom: 16px; }
+.brdbar { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.icard { gap: 14px; }
+.ico { flex: none; width: 52px; height: 52px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink); }
+.ico svg { width: 36px; height: 36px; display: block; }
+.gflow { margin: 14px 0 6px; padding: 16px 14px 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: start; gap: 6px; }
+.gf-n { display: grid; justify-items: center; text-align: center; gap: 4px; }
+.gf-n .ico { background: var(--surface); width: 56px; height: 56px; }
+.gf-n b { font-size: 14px; }
+.gf-n span:last-child { font-size: 12px; color: var(--muted); }
+.gf-a { color: var(--line2); padding-top: 22px; }
+.gf-a svg { width: 28px; height: 14px; display: block; }
+.gflow figcaption { grid-column: 1 / -1; margin-top: 8px; padding-top: 10px; border-top: 2px dashed var(--line2); font-size: 12.5px; color: var(--ink2); text-align: center; }
+.hubfig { margin: 14px auto 0; max-width: 560px; }
+.hub { width: 100%; height: auto; display: block; margin: 0 auto; }
+.hubfig figcaption { text-align: center; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+@media (max-width: 640px) {
+  .gflow { grid-template-columns: 1fr 1fr; }
+  .gf-a { display: none; }
+  .gf-n { padding-bottom: 6px; }
+}
 </style><style>[hidden]{display:none !important}</style></head><body>
+
+<nav class="topnav" aria-label="Page sections"><div class="in"><div class="br"><span class="badge" id="nbadge">TRE</span><span class="nm">Tremendous</span></div><div class="tabs" id="tabs"></div></div></nav>
 
 <header class="hero"><div class="wrap">
   <div class="brandrow"><span class="badge" id="badge"></span><span><b id="co"></b><span class="role" id="role"></span></span></div>
   <h1 id="h1"></h1>
   <p id="lede"></p>
   <div class="map" id="reqs" aria-label="What this team supports"></div>
-  <span class="pill">Personal build, not deployed</span>
+  <span class="pill">Personal build, not deployed</span><div style="margin-top:18px"><button type="button" class="dbtn pri" data-go="team">Meet the AI agents</button> <button type="button" class="dbtn" data-go="try">Try the demo</button></div>
+  <figure class="hubfig"><svg class="hub" viewBox="0 0 600 156" role="img" aria-label="Ten AI agents around one person on the People Ops team"><line x1="300" y1="78" x2="300.0" y2="26.0" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="446.9" y2="35.9" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="537.8" y2="61.9" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="537.8" y2="94.1" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="446.9" y2="120.1" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="300.0" y2="130.0" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="153.1" y2="120.1" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="62.2" y2="94.1" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="62.2" y2="61.9" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><line x1="300" y1="78" x2="153.1" y2="35.9" stroke="var(--line2)" stroke-width="1.6" stroke-dasharray="3 5"/><circle cx="300.0" cy="26.0" r="13" fill="#0b8a6a" stroke="var(--surface)" stroke-width="3"/><circle cx="446.9" cy="35.9" r="13" fill="#ff3267" stroke="var(--surface)" stroke-width="3"/><circle cx="537.8" cy="61.9" r="13" fill="#0a4fb3" stroke="var(--surface)" stroke-width="3"/><circle cx="537.8" cy="94.1" r="13" fill="#171719" stroke="var(--surface)" stroke-width="3"/><circle cx="446.9" cy="120.1" r="13" fill="#e8890c" stroke="var(--surface)" stroke-width="3"/><circle cx="300.0" cy="130.0" r="13" fill="#0064e4" stroke="var(--surface)" stroke-width="3"/><circle cx="153.1" cy="120.1" r="13" fill="#0f8b8d" stroke="var(--surface)" stroke-width="3"/><circle cx="62.2" cy="94.1" r="13" fill="#b3123f" stroke="var(--surface)" stroke-width="3"/><circle cx="62.2" cy="61.9" r="13" fill="#ff6a3d" stroke="var(--surface)" stroke-width="3"/><circle cx="153.1" cy="35.9" r="13" fill="#5b6b7e" stroke="var(--surface)" stroke-width="3"/><circle cx="300" cy="78" r="30" fill="var(--yellow)" stroke="var(--ink)" stroke-width="2.4"/><circle cx="300" cy="70" r="7" fill="none" stroke="#171719" stroke-width="2.4"/><path d="M286 94c0-8 6-12 14-12s14 4 14 12" fill="none" stroke="#171719" stroke-width="2.4" stroke-linecap="round"/></svg><figcaption>Ten agents, one person in the middle of every one.</figcaption></figure>
 </div></header>
 
 <div class="wrap"><main>
   <section class="card" aria-labelledby="teamh">
-    <h3 id="teamh">The team</h3>
-    <p class="sub">Select an agent. A person on the People Ops team stays in the middle of every one.</p>
+    <h3 id="teamh">AI Agents</h3>
+    <p class="sub"><b>Click on any agent</b> to learn more about what it does and how it supports this role. A person on the People Ops team stays in the middle of every one.</p>
     <div id="ag-org" role="group" aria-label="AI agents that report to the People Ops lead"></div>
     <div id="ag-detail" style="margin-top:18px"></div>
   </section>
@@ -234,9 +282,9 @@ header.hero .map { justify-content: center; } header.hero .map span { background
     <h3 style="margin-bottom:4px">How we communicate with them</h3>
     <p class="sub">Three ways in, and the same rule for all: a person reviews before anything reaches an employee or changes a record.</p>
     <div class="icards" style="margin-top:12px">
-      <div class="icard"><div><h3>Ask in chat</h3><p>Ask in Slack and get a drafted answer, checklist, or summary back in the thread.</p></div></div>
-      <div class="icard"><div><h3>From the action form</h3><p>A submitted request starts the matching agent's checklist and reminders.</p></div></div>
-      <div class="icard"><div><h3>On a schedule</h3><p>Deadline alerts, weekly digests, and month-end checklists arrive without asking.</p></div></div>
+      <div class="icard"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h30a3 3 0 0 1 3 3v15a3 3 0 0 1-3 3H25l-8 7v-7H9a3 3 0 0 1-3-3V15a3 3 0 0 1 3-3z" fill="var(--accent)" fill-opacity=".18"/><path d="M14 20h20M14 26h12"/><circle cx="38" cy="10" r="4.5" fill="var(--yellow)" stroke="none"/></svg></span><div><h3>Ask in chat</h3><p>Ask in Slack and get a drafted answer, checklist, or summary back in the thread.</p></div></div>
+      <div class="icard"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="6" width="28" height="36" rx="4" fill="var(--accent)" fill-opacity=".18"/><path d="M17 17h14M17 24h14"/><path d="M17 33l3 3 6-7" stroke="var(--pink)"/><circle cx="38" cy="10" r="4.5" fill="var(--yellow)" stroke="none"/></svg></span><div><h3>From the action form</h3><p>A submitted request starts the matching agent's checklist and reminders.</p></div></div>
+      <div class="icard"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="26" r="16" fill="var(--accent)" fill-opacity=".18"/><path d="M24 16v10l7 4"/><path d="M8 10l5-4M40 10l-5-4"/><circle cx="38" cy="10" r="4.5" fill="var(--yellow)" stroke="none"/></svg></span><div><h3>On a schedule</h3><p>Deadline alerts, weekly digests, and month-end checklists arrive without asking.</p></div></div>
     </div>
   </section>
 
@@ -405,12 +453,12 @@ header.hero .map { justify-content: center; } header.hero .map span { background
 
   <section class="card">
     <h3>Guardrails</h3>
-    <p class="sub">What keeps the agents safe to use in an HR team.</p>
+    <p class="sub">What keeps the agents safe to use in an HR team.</p><figure class="gflow" aria-label="How a request moves through the guardrails"><div class="gf-n"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h30a3 3 0 0 1 3 3v15a3 3 0 0 1-3 3H25l-8 7v-7H9a3 3 0 0 1-3-3V15a3 3 0 0 1 3-3z" fill="var(--accent)" fill-opacity=".18"/><path d="M14 20h20M14 26h12"/><circle cx="38" cy="10" r="4.5" fill="var(--yellow)" stroke="none"/></svg></span><b>Request</b><span>Counts and templates only</span></div><span class="gf-a" aria-hidden="true"><svg viewBox="0 0 32 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h26M21 2l7 6-7 6"/></svg></span><div class="gf-n"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l4 11 11 4-11 4-4 11-4-11-11-4 11-4z" fill="var(--accent)" fill-opacity=".18"/><circle cx="37" cy="12" r="4" fill="var(--yellow)" stroke="none"/><circle cx="36" cy="37" r="3" fill="var(--pink)" stroke="none"/></svg></span><b>Agent drafts</b><span>Works from non-PII inputs</span></div><span class="gf-a" aria-hidden="true"><svg viewBox="0 0 32 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h26M21 2l7 6-7 6"/></svg></span><div class="gf-n"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="15" r="7" fill="var(--accent)" fill-opacity=".18"/><path d="M8 40c0-8 6-13 14-13s14 5 14 13"/><circle cx="37" cy="31" r="8" fill="var(--yellow)" stroke="none"/><path d="M33.5 31l2.5 2.5 4.5-5" stroke="#171719"/></svg></span><b>Person approves</b><span>Reviews before it goes out</span></div><span class="gf-a" aria-hidden="true"><svg viewBox="0 0 32 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h26M21 2l7 6-7 6"/></svg></span><div class="gf-n"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="12" rx="14" ry="5" fill="var(--accent)" fill-opacity=".18"/><path d="M10 12v10c0 2.8 6.3 5 14 5s14-2.2 14-5V12"/><path d="M10 22v10c0 2.8 6.3 5 14 5s14-2.2 14-5V22"/><circle cx="38" cy="38" r="4.5" fill="var(--yellow)" stroke="none"/></svg></span><b>Record updated</b><span>In the HRIS, by a person</span></div><figcaption><span class="dash" aria-hidden="true"></span>Personal data never leaves the systems of record. Every step is logged.</figcaption></figure>
     <div class="icards" style="margin-top:12px">
-      <div class="icard"><div><h3>Non-PII first</h3><p>No names, ID numbers, pay, medical, or immigration documents in prompts or chat.</p></div></div>
-      <div class="icard"><div><h3>Systems of record stay put</h3><p>The HRIS, payroll, and benefits platforms hold the data. Agents work from templates and counts.</p></div></div>
-      <div class="icard"><div><h3>A person approves</h3><p>Anything that changes a record or reaches an employee is reviewed first.</p></div></div>
-      <div class="icard"><div><h3>Logged and reviewed</h3><p>Request, output, and reviewer are recorded. Legal templates get counsel review.</p></div></div>
+      <div class="icard"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="21" width="30" height="21" rx="4" fill="var(--accent)" fill-opacity=".18"/><path d="M16 21v-6a8 8 0 0 1 16 0v6"/><circle cx="24" cy="31" r="3" fill="var(--pink)" stroke="none"/><path d="M24 33v4"/></svg></span><div><h3>Non-PII first</h3><p>No names, ID numbers, pay, medical, or immigration documents in prompts or chat.</p></div></div>
+      <div class="icard"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="12" rx="14" ry="5" fill="var(--accent)" fill-opacity=".18"/><path d="M10 12v10c0 2.8 6.3 5 14 5s14-2.2 14-5V12"/><path d="M10 22v10c0 2.8 6.3 5 14 5s14-2.2 14-5V22"/><circle cx="38" cy="38" r="4.5" fill="var(--yellow)" stroke="none"/></svg></span><div><h3>Systems of record stay put</h3><p>The HRIS, payroll, and benefits platforms hold the data. Agents work from templates and counts.</p></div></div>
+      <div class="icard"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="15" r="7" fill="var(--accent)" fill-opacity=".18"/><path d="M8 40c0-8 6-13 14-13s14 5 14 13"/><circle cx="37" cy="31" r="8" fill="var(--yellow)" stroke="none"/><path d="M33.5 31l2.5 2.5 4.5-5" stroke="#171719"/></svg></span><div><h3>A person approves</h3><p>Anything that changes a record or reaches an employee is reviewed first.</p></div></div>
+      <div class="icard"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="6" width="26" height="36" rx="4" fill="var(--accent)" fill-opacity=".18"/><path d="M15 15h14M15 22h14M15 29h8"/><circle cx="35" cy="34" r="7" fill="var(--surface)" stroke="var(--pink)"/><path d="M40 39l4 4" stroke="var(--pink)"/></svg></span><div><h3>Logged and reviewed</h3><p>Request, output, and reviewer are recorded. Legal templates get counsel review.</p></div></div>
     </div>
   </section>
 
@@ -755,6 +803,82 @@ header.hero .map { justify-content: center; } header.hero .map span { background
     var g = document.getElementById('gs1'); g.textContent = 'Ready'; g.className = 'dtag ok';
   });
   show(0);
+})();
+</script>
+
+<script>
+(function () {
+  var VIEWS = [['overview', 'Overview'], ['team', 'AI Agents'], ['tools', 'Tools'], ['try', 'Try it'], ['guard', 'Guardrails'], ['brd', 'BRD']];
+  var hero = document.querySelector('header.hero');
+  var main = document.querySelector('main');
+  var secs = Array.prototype.slice.call(main.querySelectorAll(':scope > section'));
+  function byText(t) { return secs.filter(function (s) { return s.textContent.indexOf(t) > -1 && !s.querySelector('#brd') && !s.id; })[0]; }
+  var teamSec = document.querySelector('[aria-labelledby="teamh"]');
+  var toolSec = document.getElementById('inth').closest('section');
+  var brdSec = document.getElementById('brd').closest('section');
+  var commSec = secs.filter(function (s) { var h = s.querySelector('h3'); return h && h.textContent.indexOf('How we communicate') === 0; })[0];
+  var guardSec = secs.filter(function (s) { var h = s.querySelector('h3'); return h && h.textContent === 'Guardrails'; })[0];
+  // demo gets its own view
+  var tryEl = document.createElement('section'); tryEl.className = 'card'; tryEl.id = 'trysec';
+  tryEl.innerHTML = '<h3>Try it</h3><p class="sub">One made-up hire, followed across the tools. Click through it.</p>';
+  tryEl.appendChild(document.getElementById('demo'));
+  toolSec.insertAdjacentElement('afterend', tryEl);
+  var foot = document.getElementById('foot');
+  var map = { overview: [hero], team: [teamSec], tools: [toolSec], 'try': [tryEl], guard: [commSec, guardSec], brd: [brdSec] };
+  var all = [hero, teamSec, toolSec, tryEl, commSec, guardSec, brdSec];
+
+  // tools view: one tool at a time
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.itools .itool'));
+  var pick = document.createElement('div'); pick.className = 'tpick'; pick.setAttribute('role', 'group'); pick.setAttribute('aria-label', 'Choose a tool');
+  var names = ['Slack', 'Notion', 'Google Workspace', 'Rippling', 'Zapier', 'n8n'];
+  cards.forEach(function (c, i) {
+    var img = c.querySelector('.tile img'); var nm = c.querySelector('h4').textContent;
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'tpb'; b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = (img ? '<img src="' + img.src + '" alt="">' : '') + '<span></span>'; b.lastChild.textContent = nm.replace('HRIS (Rippling)', 'Rippling');
+    b.addEventListener('click', function () { showTool(i); });
+    pick.appendChild(b);
+  });
+  document.querySelector('.itools').insertAdjacentElement('beforebegin', pick);
+  function showTool(i) {
+    cards.forEach(function (c, k) { c.hidden = k !== i; });
+    Array.prototype.forEach.call(pick.children, function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+  }
+  showTool(0);
+
+  // BRD: steps first, extras on demand
+  var brd = document.getElementById('brd');
+  var what = brd.querySelector('.brd-what'), doc = brd.querySelector('.brd-doc'), win = document.getElementById('brd-win');
+  var bar = document.createElement('div'); bar.className = 'brdbar';
+  function tog(label, els) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'dbtn'; b.textContent = label; b.setAttribute('aria-pressed', 'false');
+    els.forEach(function (e) { e.hidden = true; });
+    b.addEventListener('click', function () { var open = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', open ? 'true' : 'false'); b.className = open ? 'dbtn pri' : 'dbtn'; els.forEach(function (e) { e.hidden = !open; }); });
+    bar.appendChild(b);
+  }
+  tog('New to the term? What is a BRD', [what]); tog('See the one-page BRD', [doc, win]);
+  brd.insertBefore(bar, document.getElementById('brd-steps'));
+
+  // nav
+  var tabsEl = document.getElementById('tabs');
+  VIEWS.forEach(function (v) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'tab'; b.textContent = v[1]; b.setAttribute('data-view', v[0]);
+    b.addEventListener('click', function () { go(v[0]); });
+    tabsEl.appendChild(b);
+  });
+  function go(v) {
+    if (!map[v]) v = 'overview';
+    all.forEach(function (e) { if (e) e.hidden = true; });
+    map[v].forEach(function (e) { if (e) e.hidden = false; });
+    Array.prototype.forEach.call(tabsEl.children, function (b) {
+      if (b.getAttribute('data-view') === v) { b.setAttribute('aria-current', 'page'); try { b.scrollIntoView({ block: 'nearest', inline: 'nearest' }); } catch (e) {} } else b.removeAttribute('aria-current');
+    });
+    foot.hidden = !(v === 'overview' || v === 'guard');
+    try { history.replaceState(null, '', '#' + v); } catch (e) {}
+    window.scrollTo(0, 0);
+  }
+  document.addEventListener('click', function (e) { var g = e.target.closest('[data-go]'); if (g) go(g.getAttribute('data-go')); });
+  var h = ''; try { h = (location.hash || '').replace('#', ''); } catch (e) {}
+  go(map[h] ? h : 'overview');
 })();
 </script>
 </body></html>
